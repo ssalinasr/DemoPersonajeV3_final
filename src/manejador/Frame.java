@@ -27,7 +27,12 @@ public class Frame extends javax.swing.JFrame {
         this.anima = new Thread(new Runnable() {
             @Override
             public void run() {
+                try{
                 leerIma();
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null,"La cadena no es válida","Error",0);
+                    System.out.println("Error: "+e);
+                }
             }
         });
         this.anima.start();
